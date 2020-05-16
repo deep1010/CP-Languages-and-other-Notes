@@ -1,0 +1,5 @@
+target 6
+low 0 mid 2 high 4 inB 5
+low 0 mid 0 high 1 inB 3
+low 1 mid 1 high 1 inB 4
+3

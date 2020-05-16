@@ -1,0 +1,4 @@
+rectangle 135,55 155,60
+rectangle 235,155 255,160
+rectangle 335,255 355,260
+rectangle 435,355 455,360

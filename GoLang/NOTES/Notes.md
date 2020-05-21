@@ -84,8 +84,88 @@ part1,part2 := "string here", 123.34
     | string   | "" (empty string) |
     | boolean  | false             |
 
+-------------
+Package "fmt"
+-------------
+
+>   **fmt.Println()**
+
+-   Prints to the terminal.
+-   Prints its *arguments* with an included space in between each argument and adds a line break at the end.
+
+>   **fmt.Print()**
+
+-   Prints to the terminal.
+-   Prints its *arguments* without any space in between each argument and without adding a line break at the end.
+
+>   **fmt.Printf()** 
+
+-   Use it to Interpolate strings, or leave placeholders in a string and use values to fill in the placeholders.<br> Example
+    ``` go
+    guess := "C"
+    fmt.Printf("Is %v your final answer?", guess)
+    // Prints: Is C your final answer?
+
+    // multiple placeholder in a single print
+    animal1 := "cat"
+    animal2 := "dog"
+    fmt.Printf("Are you a %v or a %v person?",animal1, animal2)
+    ```
+-   Different placeholders and use.<br/><br/>
+    | Placeholder | Meaning                              |
+    |-------------|--------------------------------------|
+    | %v          | value in default format              |
+    | %T          | Data-Type (typeof() in python)       |
+    | %t          | boolean                              |
+    | %d          | int with base 10                     |
+    | %f or %F    | float                                |
+    | %.nf        | print n decimal places of float value|
+    | %s          | string                               |
+    | %q          | string with " .. "                   |
+-   [Link](https://golang.org/pkg/fmt/#hdr-Printing) to detailed explanation of all placeholders
+
+>   **fmt.Sprintf() fmt.Sprint() fmt.Sprintln()**
+
+-   Same as fmt.Printf() fmt.Print() fmt.Println() respectively. only difference it returns the final modified/computed string rather than printing it.
+    ``` go
+    // Sprintf
+    template := "I wish I had a %v."
+    pet := "puppy"
+    
+    var wish string
+    wish = fmt.Sprintf(template,pet)
+
+    fmt.Println(wish)
+    ```
+
+>   **fmt.Scan()**
+
+-   similar to cin (c++)
+    -   only one variable at a time.
+    -   everything after space is ignored.
+
+    examples:
+    ``` go
+    var response string 
+    fmt.Scan(&response)
+
+    fmt.Printf("I'm %v.", response)
+    // if the input is "firstName secondName" 
+    // It will only print firstName.
+
+    // to scan both of them
+    var response1 string 
+    var response2 string 
+    fmt.Scan(&response1)
+    fmt.Scan(&response2)
+
+    fmt.Printf("I'm %v %v", response1, response2) 
+    ```
+
 --------
 Resources
 ---------
 
 -   [Go Lang CheatSheet Codecademy](https://www.codecademy.com/learn/learn-go/modules/learn-go-introduction/cheatsheet)
+
+https://www.codecademy.com/courses/learn-go/lessons/learn-go-conditionals/exercises/what-are-conditionals

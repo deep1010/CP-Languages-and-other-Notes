@@ -162,10 +162,65 @@ Package "fmt"
     fmt.Printf("I'm %v %v", response1, response2) 
     ```
 
---------
+------------
+Conditionals
+------------
+>   **If - else if - else**   
+
+``` go
+
+if condition1 {
+  fmt.Println("Do something 1")
+} else if condition2 {
+  fmt.Println("Do something 2")
+} else if condition3 {
+  fmt.Println("Do something 3")
+} else {
+  fmt.Println("Do something 4")
+}
+```
+-   else/else if statement must be in the same line as previous condition's terminating '}' bracket.
+
+>   **Switch Statement**
+
+``` go
+clothingChoice := "sweater"
+
+switch clothingChoice {
+case "shirt":
+  fmt.Println("We have shirts in S and M only.")
+case "polos":
+  fmt.Println("We have polos in M, L, and XL.")
+case "sweater":
+  fmt.Println("We have sweaters in S, M, L, and XL.")
+case "jackets":
+  fmt.Println("We have jackets in all sizes.")
+default:
+  fmt.Println("Sorry, we don't carry that")
+}
+```
+>   **Scoped Short Declaration Statement**
+
+-   We can also include a short variable declaration before we provide a condition in either if or switch statments. Here’s the syntax:
+
+``` go
+x := 8
+y := 9
+if product := x * y; product > 60 {
+  fmt.Println(product, "  is greater than 60")
+}
+```
+-   One thing to keep in mind when using the short variable declaration in **`if or switch statements`** is that the declared variable is ***scoped*** to the statement blocks.
+
+>   **Comparators**
+
+-   same as c++ (== != < > <= >= && || !)
+
+
+---------
 Resources
 ---------
 
 -   [Go Lang CheatSheet Codecademy](https://www.codecademy.com/learn/learn-go/modules/learn-go-introduction/cheatsheet)
 
-https://www.codecademy.com/courses/learn-go/lessons/learn-go-conditionals/exercises/what-are-conditionals
+https://www.codecademy.com/courses/learn-go/projects/bank-heist

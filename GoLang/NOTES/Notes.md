@@ -13,15 +13,15 @@ Import
 
 -   To import one or more packages use the following command
 ``` go
-	import "package1"
-	import "package2"
-	import "package3"
-	// OR
-	import (
-		"package1"
-		"package2"
-		"package3"
-	)
+import "package1"
+import "package2"
+import "package3"
+// OR
+import (
+	"package1"
+	"package2"
+	"package3"
+)
 ```
 -   [Link](https://golang.org/pkg/) to standard Go lang libraries.
 
@@ -75,6 +75,7 @@ part1,part2 := "string here", 123.34
 
 -   **Declaring a variable** or importing a package and **not using** it will give **error**.
 -   Default values of variables when initialized without values
+
 | dataType | Value             |
 |----------|-------------------|
 | int      | 0                 |
@@ -109,6 +110,7 @@ fmt.Printf("Are you a %v or a %v person?",animal1, animal2)
 ```
 
 -   Different placeholders and use.
+
 | Placeholder | Meaning                              |
 |-------------|--------------------------------------|
 | %v          | value in default format              |
@@ -126,14 +128,14 @@ fmt.Printf("Are you a %v or a %v person?",animal1, animal2)
 
 -   Same as fmt.Printf() fmt.Print() fmt.Println() respectively. only difference it returns the final modified/computed string rather than printing it.
 ``` go
-	// Sprintf
-	template := "I wish I had a %v."
-	pet := "puppy"
+// Sprintf
+template := "I wish I had a %v."
+pet := "puppy"
 
-	var wish string
-	wish = fmt.Sprintf(template,pet)
+var wish string
+wish = fmt.Sprintf(template,pet)
 
-	fmt.Println(wish)
+fmt.Println(wish)
 ```
 
 >   **fmt.Scan()**
@@ -144,20 +146,20 @@ fmt.Printf("Are you a %v or a %v person?",animal1, animal2)
 
 		examples:
 		``` go
-			var response string
-			fmt.Scan(&response)
+		var response string
+		fmt.Scan(&response)
 
-			fmt.Printf("I'm %v.", response)
-			// if the input is "firstName secondName"
-			// It will only print firstName.
+		fmt.Printf("I'm %v.", response)
+		// if the input is "firstName secondName"
+		// It will only print firstName.
 
-			// to scan both of them
-			var response1 string
-			var response2 string
-			fmt.Scan(&response1)
-			fmt.Scan(&response2)
+		// to scan both of them
+		var response1 string
+		var response2 string
+		fmt.Scan(&response1)
+		fmt.Scan(&response2)
 
-			fmt.Printf("I'm %v %v", response1, response2)
+		fmt.Printf("I'm %v %v", response1, response2)
 		```
 
 ------------
@@ -223,58 +225,58 @@ Functions
 >   **Format and Examples**
 -	Return a single value
 ``` go
-	// func funcName (argName1 argType1 , argName2 argType2 .... , argNameN argTypeN) returnType {
-	// 	your code here
-	// }
-	//examples
-	func summonNicole() {
-	fmt.Println("Hey Nicole, get over here!")
-	}
+// func funcName (argName1 argType1 , argName2 argType2 .... , argNameN argTypeN) returnType {
+// 	your code here
+// }
+//examples
+func summonNicole() {
+fmt.Println("Hey Nicole, get over here!")
+}
 
-	func doubleNum(num int) int {
-	return num * 2
-	}
+func doubleNum(num int) int {
+return num * 2
+}
 
-	func getLengthOfCentralPark() int32 {
-	var lengthInBlocks int32
-	lengthInBlocks = 51
-	return lengthInBlocks
-	}
+func getLengthOfCentralPark() int32 {
+var lengthInBlocks int32
+lengthInBlocks = 51
+return lengthInBlocks
+}
 
-	func multiplier(x int32, y int32) int32 {
-	return x * y
-	}
+func multiplier(x int32, y int32) int32 {
+return x * y
+}
 ```
 
 -	Return multiple Values
 ``` go
-	// Declaring Function
-	// func funcName (argName1 argType1 , argName2 argType2 .... , argNameN argTypeN) 
-	// (returnType1, returnType2, ... , returnTypeM) {
-	// 	your code here
-	//	return value1, value2, ... , valueM
-	// }
-	//examples
-	func GPA(midtermGrade float32, finalGrade float32) (string, float32) {
-	averageGrade := (midtermGrade + finalGrade) / 2
-	var gradeLetter string
-	if averageGrade > 90 {
-		gradeLetter = "A"
-	} else if averageGrade > 80 {
-		gradeLetter = "B"
-	} else if averageGrade > 70 {
-		gradeLetter = "C"
-	} else if averageGrade > 60 {
-		gradeLetter = "D"
-	} else {
-		gradeLetter = "F"
-	}
+// Declaring Function
+// func funcName (argName1 argType1 , argName2 argType2 .... , argNameN argTypeN) 
+// (returnType1, returnType2, ... , returnTypeM) {
+// 	your code here
+//	return value1, value2, ... , valueM
+// }
+//examples
+func GPA(midtermGrade float32, finalGrade float32) (string, float32) {
+averageGrade := (midtermGrade + finalGrade) / 2
+var gradeLetter string
+if averageGrade > 90 {
+	gradeLetter = "A"
+} else if averageGrade > 80 {
+	gradeLetter = "B"
+} else if averageGrade > 70 {
+	gradeLetter = "C"
+} else if averageGrade > 60 {
+	gradeLetter = "D"
+} else {
+	gradeLetter = "F"
+}
 
-	return gradeLetter, averageGrade 
-	}
+return gradeLetter, averageGrade 
+}
 
-	// How to call it
-	value1, value2 = GPA(89.4 , 79.5)
+// How to call it
+value1, value2 = GPA(89.4 , 79.5)
 ```
 
 -	**`Defer`** a function:
@@ -283,33 +285,33 @@ Functions
 
 -	**Example :**
 ``` go
-	package main
-	import "fmt"
+package main
+import "fmt"
 
-	func queryDatabase(query string) string {
-	var result string
-	connectDatabase()
-	// Add deferred call to disconnectDatabase() here
-	defer disconnectDatabase()
-	defer connectDatabase()
-	if query == "SELECT * FROM coolTable;" {
-		result = "NAME|DOB\nVincent Van Gogh|March 30, 1853"
-	}  
-	fmt.Println(result)
-	return result
-	}
+func queryDatabase(query string) string {
+var result string
+connectDatabase()
+// Add deferred call to disconnectDatabase() here
+defer disconnectDatabase()
+defer connectDatabase()
+if query == "SELECT * FROM coolTable;" {
+	result = "NAME|DOB\nVincent Van Gogh|March 30, 1853"
+}  
+fmt.Println(result)
+return result
+}
 
-	func connectDatabase() {
-	fmt.Println("Connecting to the database.")
-	}
+func connectDatabase() {
+fmt.Println("Connecting to the database.")
+}
 
-	func disconnectDatabase() {
-	fmt.Println("Disconnecting from the database.")
-	}
+func disconnectDatabase() {
+fmt.Println("Disconnecting from the database.")
+}
 
-	func main() {
-	queryDatabase("SELECT * FROM coolTable;")
-	}
+func main() {
+queryDatabase("SELECT * FROM coolTable;")
+}
 ```
 
 -	**Output of above code :**

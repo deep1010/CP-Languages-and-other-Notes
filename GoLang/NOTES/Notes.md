@@ -5,26 +5,26 @@ Go Lang<br/> Beginner Notes
 Compiling and Running
 ---------------------
 -   **`go build filename.go`** to compile a file and convert to executable file just like g++ or gcc
--   **`go run filename.go`** to directly run the file without compiling it.  This command combines both the compilation and execution of code for us. This allows us to quickly check the output of our code (and for any errors) along with saving time. It does not create a executable binary file. 
+-   **`go run filename.go`** to directly run the file without compiling it.  This command combines both the compilation and execution of code for us. This allows us to quickly check the output of our code (and for any errors) along with saving time. It does not create a executable binary file.
 
 ------
 Import
 ------
 
 -   To import one or more packages use the following command
-    ``` go
-    import "package1"
-    import "package2"
-    import "package3"
-    ```
-    **OR**
-    ``` go
-    import (
-        "package1"
-        "package2"
-        "package3"
-    )
-    ```
+		``` go
+		import "package1"
+		import "package2"
+		import "package3"
+		```
+		**OR**
+		``` go
+		import (
+				"package1"
+				"package2"
+				"package3"
+		)
+		```
 -   [Link](https://golang.org/pkg/) to standard Go lang libraries.
 
 ------------------------
@@ -36,7 +36,7 @@ Variables and Data Types
 -   string
 -   bool
 -   numeric types:
-    -   int8, uint8, int16, uint16, int32 , uint32, int64, uint64, int, uint, uintptr, float32, float64, complex64, complex128
+		-   int8, uint8, int16, uint16, int32 , uint32, int64, uint64, int, uint, uintptr, float32, float64, complex64, complex128
 
 >   **Declaring Variables**
 
@@ -77,12 +77,12 @@ part1,part2 := "string here", 123.34
 
 -   **Declaring a variable** or importing a package and **not using** it will give **error**.
 -   Default values of variables when initialized without values<br><br>
-    
-    | dataType | Value             |
-    |----------|-------------------|
-    | int      | 0                 |
-    | string   | "" (empty string) |
-    | boolean  | false             |
+
+		| dataType | Value             |
+		|----------|-------------------|
+		| int      | 0                 |
+		| string   | "" (empty string) |
+		| boolean  | false             |
 
 -------------
 Package "fmt"
@@ -98,85 +98,85 @@ Package "fmt"
 -   Prints to the terminal.
 -   Prints its *arguments* without any space in between each argument and without adding a line break at the end.
 
->   **fmt.Printf()** 
+>   **fmt.Printf()**
 
 -   Use it to Interpolate strings, or leave placeholders in a string and use values to fill in the placeholders.<br> Example
-    ``` go
-    guess := "C"
-    fmt.Printf("Is %v your final answer?", guess)
-    // Prints: Is C your final answer?
+		``` go
+		guess := "C"
+		fmt.Printf("Is %v your final answer?", guess)
+		// Prints: Is C your final answer?
 
-    // multiple placeholder in a single print
-    animal1 := "cat"
-    animal2 := "dog"
-    fmt.Printf("Are you a %v or a %v person?",animal1, animal2)
-    ```
+		// multiple placeholder in a single print
+		animal1 := "cat"
+		animal2 := "dog"
+		fmt.Printf("Are you a %v or a %v person?",animal1, animal2)
+		```
 -   Different placeholders and use.<br/><br/>
-    | Placeholder | Meaning                              |
-    |-------------|--------------------------------------|
-    | %v          | value in default format              |
-    | %T          | Data-Type (typeof() in python)       |
-    | %t          | boolean                              |
-    | %d          | int with base 10                     |
-    | %f or %F    | float                                |
-    | %.nf        | print n decimal places of float value|
-    | %s          | string                               |
-    | %q          | string with " .. "                   |
+		| Placeholder | Meaning                              |
+		|-------------|--------------------------------------|
+		| %v          | value in default format              |
+		| %T          | Data-Type (typeof() in python)       |
+		| %t          | boolean                              |
+		| %d          | int with base 10                     |
+		| %f or %F    | float                                |
+		| %.nf        | print n decimal places of float value|
+		| %s          | string                               |
+		| %q          | string with " .. "                   |
 -   [Link](https://golang.org/pkg/fmt/#hdr-Printing) to detailed explanation of all placeholders
 
 >   **fmt.Sprintf() fmt.Sprint() fmt.Sprintln()**
 
 -   Same as fmt.Printf() fmt.Print() fmt.Println() respectively. only difference it returns the final modified/computed string rather than printing it.
-    ``` go
-    // Sprintf
-    template := "I wish I had a %v."
-    pet := "puppy"
-    
-    var wish string
-    wish = fmt.Sprintf(template,pet)
+		``` go
+		// Sprintf
+		template := "I wish I had a %v."
+		pet := "puppy"
 
-    fmt.Println(wish)
-    ```
+		var wish string
+		wish = fmt.Sprintf(template,pet)
+
+		fmt.Println(wish)
+		```
 
 >   **fmt.Scan()**
 
 -   similar to cin (c++)
-    -   only one variable at a time.
-    -   everything after space is ignored.
+		-   only one variable at a time.
+		-   everything after space is ignored.
 
-    examples:
-    ``` go
-    var response string 
-    fmt.Scan(&response)
+		examples:
+		``` go
+		var response string
+		fmt.Scan(&response)
 
-    fmt.Printf("I'm %v.", response)
-    // if the input is "firstName secondName" 
-    // It will only print firstName.
+		fmt.Printf("I'm %v.", response)
+		// if the input is "firstName secondName"
+		// It will only print firstName.
 
-    // to scan both of them
-    var response1 string 
-    var response2 string 
-    fmt.Scan(&response1)
-    fmt.Scan(&response2)
+		// to scan both of them
+		var response1 string
+		var response2 string
+		fmt.Scan(&response1)
+		fmt.Scan(&response2)
 
-    fmt.Printf("I'm %v %v", response1, response2) 
-    ```
+		fmt.Printf("I'm %v %v", response1, response2)
+		```
 
 ------------
 Conditionals
 ------------
->   **If - else if - else**   
+>   **If - else if - else**
 
 ``` go
 
 if condition1 {
-  fmt.Println("Do something 1")
+	fmt.Println("Do something 1")
 } else if condition2 {
-  fmt.Println("Do something 2")
+	fmt.Println("Do something 2")
 } else if condition3 {
-  fmt.Println("Do something 3")
+	fmt.Println("Do something 3")
 } else {
-  fmt.Println("Do something 4")
+	fmt.Println("Do something 4")
 }
 ```
 -   else/else if statement must be in the same line as previous condition's terminating '}' bracket.
@@ -188,15 +188,15 @@ clothingChoice := "sweater"
 
 switch clothingChoice {
 case "shirt":
-  fmt.Println("We have shirts in S and M only.")
+	fmt.Println("We have shirts in S and M only.")
 case "polos":
-  fmt.Println("We have polos in M, L, and XL.")
+	fmt.Println("We have polos in M, L, and XL.")
 case "sweater":
-  fmt.Println("We have sweaters in S, M, L, and XL.")
+	fmt.Println("We have sweaters in S, M, L, and XL.")
 case "jackets":
-  fmt.Println("We have jackets in all sizes.")
+	fmt.Println("We have jackets in all sizes.")
 default:
-  fmt.Println("Sorry, we don't carry that")
+	fmt.Println("Sorry, we don't carry that")
 }
 ```
 >   **Scoped Short Declaration Statement**
@@ -207,7 +207,7 @@ default:
 x := 8
 y := 9
 if product := x * y; product > 60 {
-  fmt.Println(product, "  is greater than 60")
+	fmt.Println(product, "  is greater than 60")
 }
 ```
 -   One thing to keep in mind when using the short variable declaration in **`if or switch statements`** is that the declared variable is ***scoped*** to the statement blocks.
@@ -217,10 +217,116 @@ if product := x * y; product > 60 {
 -   same as c++ (== != < > <= >= && || !)
 
 
+
+---------
+Functions
+---------
+
+>   **Format and Examples**
+-	Return a single value
+``` go
+	// func funcName (argName1 argType1 , argName2 argType2 .... , argNameN argTypeN) returnType {
+	// 	your code here
+	// }
+	//examples
+	func summonNicole() {
+	fmt.Println("Hey Nicole, get over here!")
+	}
+
+	func doubleNum(num int) int {
+	return num * 2
+	}
+
+	func getLengthOfCentralPark() int32 {
+	var lengthInBlocks int32
+	lengthInBlocks = 51
+	return lengthInBlocks
+	}
+
+	func multiplier(x int32, y int32) int32 {
+	return x * y
+	}
+```
+
+-	Return multiple Values
+``` go
+	// Declaring Function
+	// func funcName (argName1 argType1 , argName2 argType2 .... , argNameN argTypeN) 
+	// (returnType1, returnType2, ... , returnTypeM) {
+	// 	your code here
+	//	return value1, value2, ... , valueM
+	// }
+	//examples
+	func GPA(midtermGrade float32, finalGrade float32) (string, float32) {
+	averageGrade := (midtermGrade + finalGrade) / 2
+	var gradeLetter string
+	if averageGrade > 90 {
+		gradeLetter = "A"
+	} else if averageGrade > 80 {
+		gradeLetter = "B"
+	} else if averageGrade > 70 {
+		gradeLetter = "C"
+	} else if averageGrade > 60 {
+		gradeLetter = "D"
+	} else {
+		gradeLetter = "F"
+	}
+
+	return gradeLetter, averageGrade 
+	}
+
+	// How to call it
+	value1, value2 = GPA(89.4 , 79.5)
+```
+
+-	**`Defer`** a function:
+-	If the keyword `defer` is added before any line, then that line is executed at the end of function only i.e. while exiting or returning the function.
+-	Multiple defer can be executed. They will be executed it reverse order of occurrence in code i.e LIFO or STACK
+
+-	**Example :**
+``` go
+	package main
+	import "fmt"
+
+	func queryDatabase(query string) string {
+	var result string
+	connectDatabase()
+	// Add deferred call to disconnectDatabase() here
+	defer disconnectDatabase()
+	defer connectDatabase()
+	if query == "SELECT * FROM coolTable;" {
+		result = "NAME|DOB\nVincent Van Gogh|March 30, 1853"
+	}  
+	fmt.Println(result)
+	return result
+	}
+
+	func connectDatabase() {
+	fmt.Println("Connecting to the database.")
+	}
+
+	func disconnectDatabase() {
+	fmt.Println("Disconnecting from the database.")
+	}
+
+	func main() {
+	queryDatabase("SELECT * FROM coolTable;")
+	}
+```
+
+-	**Output of above code :**
+```
+Connecting to the database.
+NAME|DOB
+Vincent Van Gogh|March 30, 1853
+Connecting to the database.
+Disconnecting from the database.
+```
+
 ---------
 Resources
 ---------
 
 -   [Go Lang CheatSheet Codecademy](https://www.codecademy.com/learn/learn-go/modules/learn-go-introduction/cheatsheet)
 
-https://www.codecademy.com/courses/learn-go/projects/bank-heist
+https://www.codecademy.com/courses/learn-go/projects/learn-go-functions-interstellar-travel

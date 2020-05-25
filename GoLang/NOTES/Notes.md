@@ -39,6 +39,7 @@ Variables and Data Types
 >   **Declaring Variables**
 
 Different ways to declare variables are as follows
+
 ``` go
 // var variableName Datatype
 var numberOfMonths int8
@@ -63,7 +64,6 @@ part2 = "some string"
 // varName1, varName2 := value1, value2
 // Here they need not be the same dataType.
 part1,part2 := "string here", 123.34
-
 ```
 
 >   **Strings**
@@ -99,6 +99,7 @@ Package "fmt"
 >   **fmt.Printf()**
 
 -   Use it to Interpolate strings, or leave placeholders in a string and use values to fill in the placeholders.<br/> Example
+
 ``` go
 guess := "C"
 fmt.Printf("Is %v your final answer?", guess)
@@ -127,6 +128,7 @@ fmt.Printf("Are you a %v or a %v person?",animal1, animal2)
 >   **fmt.Sprintf() fmt.Sprint() fmt.Sprintln()**
 
 -   Same as fmt.Printf() fmt.Print() fmt.Println() respectively. only difference it returns the final modified/computed string rather than printing it.
+
 ``` go
 // Sprintf
 template := "I wish I had a %v."
@@ -224,6 +226,7 @@ Functions
 
 >   **Format and Examples**
 -	Return a single value
+
 ``` go
 // func funcName (argName1 argType1 , argName2 argType2 .... , argNameN argTypeN) returnType {
 // 	your code here
@@ -249,6 +252,7 @@ return x * y
 ```
 
 -	Return multiple Values
+
 ``` go
 // Declaring Function
 // func funcName (argName1 argType1 , argName2 argType2 .... , argNameN argTypeN) 
@@ -284,6 +288,7 @@ value1, value2 = GPA(89.4 , 79.5)
 -	Multiple defer can be executed. They will be executed it reverse order of occurrence in code i.e LIFO or STACK
 
 -	**Example :**
+
 ``` go
 package main
 import "fmt"
@@ -315,6 +320,7 @@ queryDatabase("SELECT * FROM coolTable;")
 ```
 
 -	**Output of above code :**
+
 ```
 Connecting to the database.
 NAME|DOB

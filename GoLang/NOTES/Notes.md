@@ -12,19 +12,17 @@ Import
 ------
 
 -   To import one or more packages use the following command
-		``` go
-		import "package1"
-		import "package2"
-		import "package3"
-		```
-		**OR**
-		``` go
-		import (
-				"package1"
-				"package2"
-				"package3"
-		)
-		```
+``` go
+	import "package1"
+	import "package2"
+	import "package3"
+	// OR
+	import (
+		"package1"
+		"package2"
+		"package3"
+	)
+```
 -   [Link](https://golang.org/pkg/) to standard Go lang libraries.
 
 ------------------------
@@ -76,13 +74,12 @@ part1,part2 := "string here", 123.34
 >   **Notes**
 
 -   **Declaring a variable** or importing a package and **not using** it will give **error**.
--   Default values of variables when initialized without values<br><br>
-
-		| dataType | Value             |
-		|----------|-------------------|
-		| int      | 0                 |
-		| string   | "" (empty string) |
-		| boolean  | false             |
+-   Default values of variables when initialized without values
+| dataType | Value             |
+|----------|-------------------|
+| int      | 0                 |
+| string   | "" (empty string) |
+| boolean  | false             |
 
 -------------
 Package "fmt"
@@ -100,66 +97,67 @@ Package "fmt"
 
 >   **fmt.Printf()**
 
--   Use it to Interpolate strings, or leave placeholders in a string and use values to fill in the placeholders.<br> Example
-		``` go
-		guess := "C"
-		fmt.Printf("Is %v your final answer?", guess)
-		// Prints: Is C your final answer?
+-   Use it to Interpolate strings, or leave placeholders in a string and use values to fill in the placeholders.<br/> Example
+``` go
+guess := "C"
+fmt.Printf("Is %v your final answer?", guess)
+// Prints: Is C your final answer?
+// multiple placeholder in a single print
+animal1 := "cat"
+animal2 := "dog"
+fmt.Printf("Are you a %v or a %v person?",animal1, animal2)
+```
 
-		// multiple placeholder in a single print
-		animal1 := "cat"
-		animal2 := "dog"
-		fmt.Printf("Are you a %v or a %v person?",animal1, animal2)
-		```
--   Different placeholders and use.<br/><br/>
-		| Placeholder | Meaning                              |
-		|-------------|--------------------------------------|
-		| %v          | value in default format              |
-		| %T          | Data-Type (typeof() in python)       |
-		| %t          | boolean                              |
-		| %d          | int with base 10                     |
-		| %f or %F    | float                                |
-		| %.nf        | print n decimal places of float value|
-		| %s          | string                               |
-		| %q          | string with " .. "                   |
+-   Different placeholders and use.
+| Placeholder | Meaning                              |
+|-------------|--------------------------------------|
+| %v          | value in default format              |
+| %T          | Data-Type (typeof() in python)       |
+| %t          | boolean                              |
+| %d          | int with base 10                     |
+| %f or %F    | float                                |
+| %.nf        | print n decimal places of float value|
+| %s          | string                               |
+| %q          | string with " .. "                   |
+
 -   [Link](https://golang.org/pkg/fmt/#hdr-Printing) to detailed explanation of all placeholders
 
 >   **fmt.Sprintf() fmt.Sprint() fmt.Sprintln()**
 
 -   Same as fmt.Printf() fmt.Print() fmt.Println() respectively. only difference it returns the final modified/computed string rather than printing it.
-		``` go
-		// Sprintf
-		template := "I wish I had a %v."
-		pet := "puppy"
+``` go
+	// Sprintf
+	template := "I wish I had a %v."
+	pet := "puppy"
 
-		var wish string
-		wish = fmt.Sprintf(template,pet)
+	var wish string
+	wish = fmt.Sprintf(template,pet)
 
-		fmt.Println(wish)
-		```
+	fmt.Println(wish)
+```
 
 >   **fmt.Scan()**
 
 -   similar to cin (c++)
-		-   only one variable at a time.
-		-   everything after space is ignored.
+	-   only one variable at a time.
+	-   everything after space is ignored.
 
 		examples:
 		``` go
-		var response string
-		fmt.Scan(&response)
+			var response string
+			fmt.Scan(&response)
 
-		fmt.Printf("I'm %v.", response)
-		// if the input is "firstName secondName"
-		// It will only print firstName.
+			fmt.Printf("I'm %v.", response)
+			// if the input is "firstName secondName"
+			// It will only print firstName.
 
-		// to scan both of them
-		var response1 string
-		var response2 string
-		fmt.Scan(&response1)
-		fmt.Scan(&response2)
+			// to scan both of them
+			var response1 string
+			var response2 string
+			fmt.Scan(&response1)
+			fmt.Scan(&response2)
 
-		fmt.Printf("I'm %v %v", response1, response2)
+			fmt.Printf("I'm %v %v", response1, response2)
 		```
 
 ------------

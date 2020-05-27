@@ -1,14 +1,14 @@
 Go Lang<br/> Beginner Notes
 ===========================
 
-
-Compiling and Running
+---------------------
+COMPILING AND RUNNING
 ---------------------
 -   **`go build filename.go`** to compile a file and convert to executable file just like g++ or gcc
 -   **`go run filename.go`** to directly run the file without compiling it.  This command combines both the compilation and execution of code for us. This allows us to quickly check the output of our code (and for any errors) along with saving time. It does not create a executable binary file.
 
 ------
-Import
+IMPORT
 ------
 
 -   To import one or more packages use the following command
@@ -26,7 +26,7 @@ import (
 -   [Link](https://golang.org/pkg/) to standard Go lang libraries.
 
 ------------------------
-Variables and Data Types
+VARIABLES AND DATA TYPES
 ------------------------
 
 >   **Data Types:**
@@ -83,7 +83,7 @@ part1,part2 := "string here", 123.34
 | boolean  | false             |
 
 -------------
-Package "fmt"
+PACKAGE "fmt"
 -------------
 
 >   **fmt.Println()**
@@ -165,7 +165,7 @@ fmt.Println(wish)
 		```
 
 ------------
-Conditionals
+CONDITIONALS
 ------------
 >   **If - else if - else**
 
@@ -221,7 +221,7 @@ if product := x * y; product > 60 {
 
 
 ---------
-Functions
+FUNCTIONS
 ---------
 
 >   **Format and Examples**
@@ -329,10 +329,43 @@ Connecting to the database.
 Disconnecting from the database.
 ```
 
+----------------------
+ADDRESSES AND POINTERS
+----------------------
+
+-	Accessing address of a variable and pointer to a variable is same as c++.
+
+``` go
+// accessing the pointer
+var pointerToVar *varDataType
+
+// accessing and storing the address 
+pointerToVar = &varName
+
+// updating value using pointer
+*pointerToVar = newVarValue
+```
+
+-----------------
+PASS-BY-REFERENCE
+-----------------
+
+-	Here is an example for pass by reference in GoLang
+
+``` go
+func addHundred (numPtr *int) {
+  *numPtr += 100
+}
+
+func main() {
+  x := 1
+  addHundred(&x)
+  fmt.Println(x) // Prints 101
+}
+```
+
 ---------
 Resources
 ---------
 
 -   [Go Lang CheatSheet Codecademy](https://www.codecademy.com/learn/learn-go/modules/learn-go-introduction/cheatsheet)
-
-https://www.codecademy.com/courses/learn-go/projects/learn-go-functions-interstellar-travel
